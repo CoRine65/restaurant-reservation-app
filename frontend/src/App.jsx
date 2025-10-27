@@ -2,6 +2,7 @@
 //import reactLogo from './assets/react.svg'
 //import viteLogo from '/vite.svg'
 import './App.css'
+import Carousel from './Carousel';
 
 function App() {
  return (
@@ -9,7 +10,7 @@ function App() {
       <h1>Restaurant </h1>
   
     <div className='carousel-container'>
-      carousel
+      <Carousel />
     </div>
 
     <div className='bottom-row'>
