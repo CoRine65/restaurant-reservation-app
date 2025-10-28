@@ -18,6 +18,12 @@ const [currentIndex, setCurrentIndex] = useState(0);
 
   return (
     <div className="carousel">
+      <div className="carousel-buttons">
+        <button>About</button>
+        <button>Reservations</button>
+        <button>Menu</button>
+      </div>
+      
       <button className="prev-button" onClick={prevSlide}>
         ❮
       </button>
