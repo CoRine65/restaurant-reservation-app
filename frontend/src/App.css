@@ -1,8 +1,8 @@
 .app-container{
-  background-color: rgb(247, 247, 240);
+  background-color: rgb(57, 12, 3);
   height: 100vh;
   width: 100%;
-  border: 2px solid rgb(0, 80, 241);
+ 
 
   
   display: flex;
@@ -13,6 +13,12 @@
 
 h1{
 text-align: center;
+font-family: 'Inter', system-ui, sans-serif;
+color: rgb(218, 232, 210);
+}
+
+h2{
+  color: rgb(218, 232, 210);
 }
 
 .carousel-container{
@@ -43,6 +49,8 @@ text-align: center;
   height: 100%;
   width: 90%;
 
+  font-family: 'Inter', system-ui, sans-serif;
+
   /*border: 2px solid rgb(51, 60, 162);*/
 }
 
@@ -54,6 +62,9 @@ text-align: center;
 
   height: 100%;
   width: 90%;
+
+  font-family: 'Inter', system-ui, sans-serif;
+
 
   /*border: 2px solid rgb(3, 12, 113);*/
 }
@@ -69,6 +80,8 @@ text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);  
 }
 
 .carousel-image {
@@ -76,6 +89,7 @@ text-align: center;
   height: 100%;
   object-fit: cover;
   border-radius: 10px;
+  
 }
 
 .prev-button,
@@ -103,8 +117,10 @@ text-align: center;
 
 .hours-list{
   font-size: 20px;
+  color: rgb(195, 207, 188);
 }
 
 .contact-info{
   font-size: 20px;
+  color: rgb(195, 207, 188);
 }

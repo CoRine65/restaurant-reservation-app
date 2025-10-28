@@ -7,7 +7,7 @@ import Carousel from './Carousel';
 function App() {
  return (
   <main className='app-container'>
-      <h1>Restaurant </h1>
+      <h1>Blossom Cafe </h1>
   
     <div className='carousel-container'>
       <Carousel />
@@ -34,7 +34,7 @@ function App() {
       </div>
 
 
-      
+
     </div>
   </main>
 
