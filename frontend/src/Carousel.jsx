@@ -22,8 +22,8 @@ const [currentIndex, setCurrentIndex] = useState(0);
   return (
     <div className="carousel">
       <div className="carousel-buttons">
-        <button onClick={() => openModal('about')}>About</button>
-        <button>Reservations</button>
+        <button onClick={() => openModal('About')}>About</button>
+        <button onClick={() => openModal('Reservations')}>Reservations</button>
         <button onClick={() => openModal('Menu')}>Menu</button>
       </div>
       
@@ -43,7 +43,7 @@ const [currentIndex, setCurrentIndex] = useState(0);
 
 
         {/*modal*/}
-        { activeModal === 'about' && (
+        { activeModal === 'About' && (
           <div className="modal-overlay" onClick={closeModal}> 
             <div className="modal-content" onClick={(e) => e.stopPropagation()}> 
               <button className="close-button" onClick={closeModal}> x </button>
@@ -73,6 +73,42 @@ const [currentIndex, setCurrentIndex] = useState(0);
             </div>
           </div>
         )    
+        }
+
+        {activeModal === 'Reservations' && (
+          <div className="modal-overlay" onClick={closeModal}>
+            <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+              <button className="close-button" onClick={closeModal}>x</button>
+              <h2>Make a Reservation</h2>
+
+              <form className="reservation-form">
+                <label>
+                  Date: <input type="date" required/>
+                </label>
+
+                <label>
+                  Time: 
+                  <select required>
+                    <option value="">Select time</option>
+                    <option>5:00 PM </option>
+                    <option>6:00 PM </option>
+                    <option>7:00 PM </option>
+                    <option>8:00 PM </option>
+                  </select>
+                </label>
+                <button type="submit">Reserve</button>
+              </form>
+
+
+
+
+
+
+            </div>
+          </div>
+        
+        
+        )
         }
 
 
