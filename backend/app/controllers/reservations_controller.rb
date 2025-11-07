@@ -2,8 +2,19 @@ class ReservationsController < ApplicationController
   before_action :set_reservation, only: [:show, :update, :destroy]
 
   def index
-    reservations = Reservation.all
-    render json: reservations
+    reservations = if params[:date].present?
+      Reservation.where("DATE(reservation_time) = ?", params[:date])
+      else
+        Reservation.all
+      end
+  render json: reservations.map { |r|
+    {
+      id: r.id,
+      date: r.reservation_time.strftime("%Y-%m-%d"),
+      time: r.reservation_time.strftime("%-l:%M %p"),
+      name: r.user.name
+    }
+  }
   end
 
   def show
@@ -12,11 +23,17 @@ class ReservationsController < ApplicationController
 
   def create
     reservation = Reservation.new(reservation_params)
-    if reservation.save
-      render json: reservation, status: :created
-    else
-      render json: { errors: reservation.errors.full_messages }, status: :unprocessable_entity
-    end
+
+  if reservation.save
+    render json: {
+      id: reservation.id,
+      date: reservation.reservation_time.strftime("%Y-%m-%d"),
+      time: reservation.reservation_time.strftime("%-l:%M %p"),
+      name: reservation.user.name
+    }, status: :created
+  else
+    render json: { errors: reservation.errors.full_messages }, status: :unprocessable_entity
+  end
   end
 
   def update
