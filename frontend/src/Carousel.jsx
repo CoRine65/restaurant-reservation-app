@@ -74,8 +74,8 @@ const reservationTime = `${selectedDate}T${hour24.toString().padStart(2,'0')}:${
     const payload = {
       reservation: {
         reservation_time: reservationTime,
-        user_id: 1,
-        table_id: 1,
+        user_id: 4,
+        table_id: 4,
       },
     };
   
